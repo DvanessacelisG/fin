@@ -20,7 +20,7 @@ resource "aws_security_group" "RDS_MySQL" {
 
 
 resource "aws_db_subnet_group" "RDS_SG" {
-  name       = "rdssubnet"
+  name       = "rdssubnettt"
   subnet_ids = ["${var.privateSubnet}"]
 }
 resource "aws_db_instance" "Create_DB_Instance" {

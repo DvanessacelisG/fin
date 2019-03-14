@@ -1,17 +1,6 @@
-data "aws_ami" "ecs_ami" {
-  owners      = ["amazon"]
-  most_recent = true
-
-  filter {
-    name   = "name"
-    values = ["amzn-ami-*-amazon-ecs-optimized"]
-  }
-}
 
 resource "aws_launch_configuration" "ecs-launch-configuration" {
   name = "vane-ecs-launch-configuration"
-
-  #image_id             = "${data.aws_ami.ecs_ami.id}"
   image_id             = "ami-055c44a99d4f38e95"
   instance_type        = "${var.instance_type}"
   iam_instance_profile = "${aws_iam_instance_profile.ecs-instance-profile.id}"

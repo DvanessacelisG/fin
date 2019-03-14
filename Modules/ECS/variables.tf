@@ -32,3 +32,7 @@ variable "sg_LB" {}
 variable "port_lb" {
   type = "list"
 }
+
+variable "sg_lb" {
+  
+}

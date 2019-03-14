@@ -6,6 +6,8 @@ resource "aws_ecr_repository" "Vane_ECR_2" {
   name = "vane-${var.ECR_repository}"
 }
 
+
+
 /*====
 ECR policy- just me
 ======*/
@@ -21,7 +23,7 @@ resource "aws_ecr_repository_policy" "ecr_policy2" {
       "Sid": "new policy",
       "Effect": "Allow",
       "Principal": {
-       "AWS": "arn:aws:iam::329925270288:user/Vanessa.Celis"
+       "AWS": "*"
      },
       "Action": [
         "ecr:BatchCheckLayerAvailability",

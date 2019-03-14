@@ -1,0 +1,26 @@
+[
+  {
+      "name": "Frontend",
+      "image": "${image}",
+      "cpu": 2,
+      "memory": 128,
+      "links": [],
+      "portMappings": [
+          {
+              "containerPort": 3030,
+              "hostPort": 3030,
+              "protocol": "tcp"
+          }
+      ],
+      "essential": true,
+      "entryPoint": [],
+      "command": [],
+      "environment": [
+          {
+
+          }
+      ],
+      "mountPoints": [],
+      "volumesFrom": []
+  }
+]
