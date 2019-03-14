@@ -24,13 +24,13 @@
   }*/
 
 
-  resource "aws_ecs_service" "mongo" {
-  name          = "mongo"
+  resource "aws_ecs_service" "front" {
+  name          = "front"
   cluster       = "${aws_ecs_cluster.Vane_cluster.id}"
   desired_count = 2
 
   # Track the latest ACTIVE revision
-  task_definition = "${aws_ecs_task_definition.mongo.family}"
+  task_definition = "${aws_ecs_task_definition.front.family}"
    load_balancer {
       target_group_arn = "${aws_lb_target_group.extern-target-group.arn}"
       container_name = "front"
@@ -46,7 +46,7 @@
   task_definition = "${aws_ecs_task_definition.back.family}"
    load_balancer {
       target_group_arn = "${aws_lb_target_group.int-target-group.arn}"
-      container_name = "front"
+      container_name = "back"
       container_port =3000
   }
 }

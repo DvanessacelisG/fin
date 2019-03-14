@@ -11,10 +11,10 @@ resource "aws_ecs_task_definition" "front" {
 
   container_definitions = <<DEFINITION
 [
-  {S
+  {
     "cpu": 128,
     "essential": true,
-    "image": "905326150904.dkr.ecr.us-east-1.amazonaws.com/test",
+    "image": "905326150904.dkr.ecr.us-east-1.amazonaws.com/front:latest",
     "memory": 128,
     "portMappings": [
           {
@@ -39,7 +39,7 @@ resource "aws_ecs_task_definition" "back" {
   {
     "cpu": 128,
     "essential": true,
-    "image": "905326150904.dkr.ecr.us-east-1.amazonaws.com/test:latest",
+    "image": "905326150904.dkr.ecr.us-east-1.amazonaws.com/backend:latest",
     "memory": 128,
     "portMappings": [
           {
@@ -48,7 +48,7 @@ resource "aws_ecs_task_definition" "back" {
               "protocol": "tcp"
           }],
     "memoryReservation": 64,
-    "name": "front"
+    "name": "back"
   }
 ]
 DEFINITION
